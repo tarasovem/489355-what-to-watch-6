@@ -2,7 +2,7 @@ import React from 'react';
 import FilmCard from '../film-card/film-card';
 
 const Main = (props) => {
-  const {movieList} = props;
+  const {movieList, promoMovie} = props;
 
   return (
     <React.Fragment>
@@ -37,10 +37,10 @@ const Main = (props) => {
             </div>
 
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">The Grand Budapest Hotel</h2>
+              <h2 className="movie-card__title">{promoMovie.title}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">Drama</span>
-                <span className="movie-card__year">2014</span>
+                <span className="movie-card__genre">{promoMovie.genre}</span>
+                <span className="movie-card__year">{promoMovie.releaseDate}</span>
               </p>
 
               <div className="movie-card__buttons">

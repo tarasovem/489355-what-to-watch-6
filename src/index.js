@@ -104,10 +104,15 @@ const Data = {
       imageURL: `img/midnight-special.jpg`,
       title: `Midnight Special`
     }
-  ]
+  ],
+  promo: {
+    title: `The Grand Budapest Hotel`,
+    genre: `Drama`,
+    releaseDate: `2014`
+  }
 };
 
 ReactDOM.render(
-    <App movieList={Data.movies}/>,
+    <App movieList={Data.movies} promoMovie={Data.promo}/>,
     document.querySelector(`#root`)
 );
