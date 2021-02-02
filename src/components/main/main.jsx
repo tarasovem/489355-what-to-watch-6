@@ -100,7 +100,7 @@ const Main = (props) => {
           </ul>
 
           <div className="catalog__movies-list">
-            { movieList.map(movie => {
+            { movieList.map((movie) => {
               return <FilmCard movie={movie} key={movie.id} />;
             }) }
           </div>
