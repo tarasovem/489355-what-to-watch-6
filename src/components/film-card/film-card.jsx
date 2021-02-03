@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const FilmCard = (props) => {
   const {movie} = props;
@@ -13,6 +14,14 @@ const FilmCard = (props) => {
       </h3>
     </article>
   );
+};
+
+FilmCard.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    imageURL: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  })
 };
 
 export default FilmCard;

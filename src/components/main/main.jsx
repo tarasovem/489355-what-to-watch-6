@@ -1,5 +1,6 @@
 import React from 'react';
 import FilmCard from '../film-card/film-card';
+import PropTypes from "prop-types";
 
 const Main = (props) => {
   const {movieList, promoMovie} = props;
@@ -46,13 +47,13 @@ const Main = (props) => {
               <div className="movie-card__buttons">
                 <button className="btn btn--play movie-card__button" type="button">
                   <svg viewBox="0 0 19 19" width="19" height="19">
-                    <use xlinkHref="#play-s"></use>
+                    <use xlinkHref="#play-s" />
                   </svg>
                   <span>Play</span>
                 </button>
                 <button className="btn btn--list movie-card__button" type="button">
                   <svg viewBox="0 0 19 20" width="19" height="20">
-                    <use xlinkHref="#add"></use>
+                    <use xlinkHref="#add" />
                   </svg>
                   <span>My list</span>
                 </button>
@@ -127,6 +128,21 @@ const Main = (props) => {
 
     </React.Fragment>
   );
+};
+
+Main.propTypes = {
+  movieList: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        imageURL: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired
+      })
+  ).isRequired,
+  promoMovie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    releaseDate: PropTypes.string.isRequired
+  })
 };
 
 export default Main;
