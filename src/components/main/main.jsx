@@ -99,9 +99,7 @@ const Main = ({movieList, promoMovie}) => {
           </ul>
 
           <div className="catalog__movies-list">
-            { movieList.map((movie) => {
-              return <FilmCard movie={movie} key={movie.id} />;
-            }) }
+            { movieList.map((movie) => <FilmCard movie={movie} key={movie.id} />) }
           </div>
 
           <div className="catalog__more">
