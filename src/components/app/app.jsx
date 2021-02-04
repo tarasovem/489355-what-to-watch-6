@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Main from "../main/main";
 
-const App = (props) => {
-  const {movieList, promoMovie} = props;
-
+const App = ({movieList, promoMovie}) => {
   return (
     <Main movieList={movieList} promoMovie={promoMovie} />
   );

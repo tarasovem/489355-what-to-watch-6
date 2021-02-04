@@ -2,9 +2,7 @@ import React from 'react';
 import FilmCard from '../film-card/film-card';
 import PropTypes from "prop-types";
 
-const Main = (props) => {
-  const {movieList, promoMovie} = props;
-
+const Main = ({movieList, promoMovie}) => {
   return (
     <React.Fragment>
 
