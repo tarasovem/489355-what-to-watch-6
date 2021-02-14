@@ -9,7 +9,7 @@ import MyList from "../my-list/my-list";
 import Player from "../player/player";
 import NotFoundScreen from "../not-found-screen/not-found-screen";
 
-const App = ({movieList, promoMovie}) => {
+const App = ({movieList, promoMovie, films}) => {
   return (
     <BrowserRouter>
       <Switch>
@@ -51,7 +51,28 @@ App.propTypes = {
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.string.isRequired
-  })
+  }),
+  films: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        posterImage: PropTypes.string.isRequired,
+        previewImage: PropTypes.string.isRequired,
+        backgroundImage: PropTypes.string.isRequired,
+        backgroundColor: PropTypes.string.isRequired,
+        videoLink: PropTypes.string.isRequired,
+        previewVideoLink: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        rating: PropTypes.number.isRequired,
+        scoresCount: PropTypes.number.isRequired,
+        director: PropTypes.string.isRequired,
+        starring: PropTypes.arrayOf(PropTypes.string.isRequired),
+        runTime: PropTypes.number.isRequired,
+        genre: PropTypes.string.isRequired,
+        released: PropTypes.number.isRequired,
+        isFavorite: PropTypes.bool.isRequired
+      }).isRequired,
+  ).isRequired,
 };
 
 export default App;

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
+import films from './mocks/films';
 
 const Data = {
   movies: [
@@ -113,6 +114,6 @@ const Data = {
 };
 
 ReactDOM.render(
-    <App movieList={Data.movies} promoMovie={Data.promo}/>,
+    <App movieList={Data.movies} promoMovie={Data.promo} films={films} />,
     document.querySelector(`#root`)
 );
