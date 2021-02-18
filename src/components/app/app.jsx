@@ -20,7 +20,7 @@ const App = ({movieList, promoMovie, films}) => {
           <Login />
         </Route>
         <Route exact path='/mylist'>
-          <MyList />
+          <MyList films={films} />
         </Route>
         <Route exact path='/films/:id'>
           <Films />
