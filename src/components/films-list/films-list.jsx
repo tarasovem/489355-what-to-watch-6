@@ -3,17 +3,22 @@ import PropTypes from 'prop-types';
 import FilmCard from "../film-card/film-card";
 
 const FilmsList = ({films}) => {
-  const [activeCardId, setActiveCardId] = useState({
-    filmId: ``
-  });
+  const [activeCardId, setActiveCardId] = useState(``);
 
   const handleFilmCardMouseEnter = (id) => {
-    setActiveCardId({...activeCardId, filmId: id});
+    setActiveCardId(id);
   };
 
   return (
     <div className="catalog__movies-list">
-      {films.map(({id, ...rest}) => <FilmCard key={id} filmId={id} {...rest} onFilmCardMouseEnter={handleFilmCardMouseEnter} />)}
+      {films.map(({id, ...rest}) => (
+        <FilmCard
+          key={id}
+          filmId={id}
+          {...rest}
+          activeCardId={activeCardId}
+          onFilmCardMouseEnter={handleFilmCardMouseEnter} />
+      ))}
     </div>
   );
 };

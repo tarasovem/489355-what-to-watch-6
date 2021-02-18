@@ -9,12 +9,12 @@ import MyList from "../my-list/my-list";
 import Player from "../player/player";
 import NotFoundScreen from "../not-found-screen/not-found-screen";
 
-const App = ({movieList, promoMovie, films}) => {
+const App = ({promoMovie, films}) => {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path='/'>
-          <Main movieList={movieList} promoMovie={promoMovie} films={films} />
+          <Main promoMovie={promoMovie} films={films} />
         </Route>
         <Route exact path='/login'>
           <Login />
@@ -40,13 +40,6 @@ const App = ({movieList, promoMovie, films}) => {
 };
 
 App.propTypes = {
-  movieList: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        imageURL: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired
-      })
-  ).isRequired,
   promoMovie: PropTypes.shape({
     title: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
