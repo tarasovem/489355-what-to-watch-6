@@ -14,7 +14,7 @@ const MovieCard = (props) => {
         <img src={posterImage} alt={name} width="280" height="175"/>
       </div>
       <h3 className="small-movie-card__title">
-        <Link to={`/films/${movieId}`} className="small-movie-card__link">{name}</Link>
+        <Link to={`/films/${movieId}`} movieId={movieId} className="small-movie-card__link">{name}</Link>
       </h3>
     </article>
   );
