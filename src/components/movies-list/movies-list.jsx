@@ -15,7 +15,7 @@ const MoviesList = (props) => {
       {movies.map(({id, ...rest}) => (
         <MovieCard
           key={id}
-          filmId={id}
+          movieId={id}
           {...rest}
           activeCardId={activeCardId}
           onMovieCardMouseEnter={handleMovieCardMouseEnter} />
