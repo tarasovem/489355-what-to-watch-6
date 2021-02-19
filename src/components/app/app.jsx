@@ -9,7 +9,9 @@ import MyList from "../my-list/my-list";
 import Player from "../player/player";
 import NotFoundScreen from "../not-found-screen/not-found-screen";
 
-const App = ({promoMovie, movies}) => {
+const App = (props) => {
+  const {promoMovie, movies, singleMovie} = props;
+
   return (
     <BrowserRouter>
       <Switch>
@@ -29,7 +31,7 @@ const App = ({promoMovie, movies}) => {
           <AddReview />
         </Route>
         <Route exact path='/player/:id'>
-          <Player />
+          <Player movie={singleMovie} />
         </Route>
         <Route>
           <NotFoundScreen />

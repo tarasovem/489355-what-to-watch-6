@@ -2,7 +2,9 @@ import React from 'react';
 import MoviesList from "../movies-list/movies-list";
 import PropTypes from "prop-types";
 
-const MyList = ({movies}) => {
+const MyList = (props) => {
+  const {movies} = props;
+
   return (
     <div className="user-page">
       <header className="page-header user-page__head">

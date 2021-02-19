@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MovieCard = ({onMovieCardMouseEnter, filmId, posterImage, name}) => {
+const MovieCard = (props) => {
+  const {onMovieCardMouseEnter, filmId, posterImage, name} = props;
   const handleMovieCardMouseEnter = () => {
     onMovieCardMouseEnter(filmId);
   };

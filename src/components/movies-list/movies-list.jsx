@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from "../movie-card/movie-card";
 
-const MoviesList = ({movies}) => {
+const MoviesList = (props) => {
+  const {movies} = props;
   const [activeCardId, setActiveCardId] = useState(``);
 
   const handleMovieCardMouseEnter = (id) => {

@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from "prop-types";
 import MoviesList from "../movies-list/movies-list";
 
-const Main = ({promoMovie, movies}) => {
-  return (
-    <React.Fragment>
+const Main = (props) => {
+  const {promoMovie, movies} = props;
 
+  return (
+    <>
       <section className="movie-card">
         <div className="movie-card__bg">
           <img src="img/bg-the-grand-budapest-hotel.jpg" alt="The Grand Budapest Hotel"/>
@@ -120,7 +121,7 @@ const Main = ({promoMovie, movies}) => {
         </footer>
       </div>
 
-    </React.Fragment>
+    </>
   );
 };
 
