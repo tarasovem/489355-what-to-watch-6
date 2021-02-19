@@ -28,7 +28,7 @@ const App = (props) => {
           <Movies />
         </Route>
         <Route exact path='/films/:id/review'>
-          <AddReview />
+          <AddReview movie={singleMovie} />
         </Route>
         <Route exact path='/player/:id'>
           <Player movie={singleMovie} />
@@ -68,6 +68,7 @@ App.propTypes = {
         isFavorite: PropTypes.bool.isRequired
       }).isRequired,
   ).isRequired,
+  singleMovie: PropTypes.object.isRequired,
 };
 
 export default App;
