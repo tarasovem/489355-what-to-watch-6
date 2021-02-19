@@ -1,30 +1,30 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import FilmCard from "../film-card/film-card";
+import MovieCard from "../movie-card/movie-card";
 
-const FilmsList = ({films}) => {
+const MoviesList = ({movies}) => {
   const [activeCardId, setActiveCardId] = useState(``);
 
-  const handleFilmCardMouseEnter = (id) => {
+  const handleMovieCardMouseEnter = (id) => {
     setActiveCardId(id);
   };
 
   return (
     <div className="catalog__movies-list">
-      {films.map(({id, ...rest}) => (
-        <FilmCard
+      {movies.map(({id, ...rest}) => (
+        <MovieCard
           key={id}
           filmId={id}
           {...rest}
           activeCardId={activeCardId}
-          onFilmCardMouseEnter={handleFilmCardMouseEnter} />
+          onMovieCardMouseEnter={handleMovieCardMouseEnter} />
       ))}
     </div>
   );
 };
 
-FilmsList.propTypes = {
-  films: PropTypes.arrayOf(
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
@@ -47,4 +47,4 @@ FilmsList.propTypes = {
   ).isRequired,
 };
 
-export default FilmsList;
+export default MoviesList;

@@ -1,8 +1,8 @@
 import React from 'react';
-import FilmsList from "../films-list/films-list";
+import MoviesList from "../movies-list/movies-list";
 import PropTypes from "prop-types";
 
-const MyList = ({films}) => {
+const MyList = ({movies}) => {
   return (
     <div className="user-page">
       <header className="page-header user-page__head">
@@ -26,7 +26,7 @@ const MyList = ({films}) => {
       <section className="catalog">
         <h2 className="catalog__title visually-hidden">Catalog</h2>
 
-        <FilmsList films={films} />
+        <MoviesList movies={movies} />
 
       </section>
 
@@ -48,7 +48,7 @@ const MyList = ({films}) => {
 };
 
 MyList.propTypes = {
-  films: PropTypes.arrayOf(
+  movies: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,

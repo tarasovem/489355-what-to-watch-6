@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 
-const Films = () => {
+const Movies = () => {
   return (
     <Fragment>
       <section className="movie-card movie-card--full">
@@ -160,4 +160,4 @@ const Films = () => {
   );
 };
 
-export default Films;
+export default Movies;

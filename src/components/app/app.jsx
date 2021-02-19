@@ -3,27 +3,27 @@ import PropTypes from 'prop-types';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Main from "../main/main";
 import AddReview from "../add-review/add-review";
-import Films from "../films/films";
+import Movies from "../movies/movies";
 import Login from "../login/login";
 import MyList from "../my-list/my-list";
 import Player from "../player/player";
 import NotFoundScreen from "../not-found-screen/not-found-screen";
 
-const App = ({promoMovie, films}) => {
+const App = ({promoMovie, movies}) => {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path='/'>
-          <Main promoMovie={promoMovie} films={films} />
+          <Main promoMovie={promoMovie} movies={movies} />
         </Route>
         <Route exact path='/login'>
           <Login />
         </Route>
         <Route exact path='/mylist'>
-          <MyList films={films} />
+          <MyList movies={movies} />
         </Route>
         <Route exact path='/films/:id'>
-          <Films />
+          <Movies />
         </Route>
         <Route exact path='/films/:id/review'>
           <AddReview />
@@ -45,7 +45,7 @@ App.propTypes = {
     genre: PropTypes.string.isRequired,
     releaseDate: PropTypes.string.isRequired
   }),
-  films: PropTypes.arrayOf(
+  movies: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,

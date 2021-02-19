@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FilmCard = ({onFilmCardMouseEnter, filmId, posterImage, name}) => {
-  const handleFilmCardMouseEnter = () => {
-    onFilmCardMouseEnter(filmId);
+const MovieCard = ({onMovieCardMouseEnter, filmId, posterImage, name}) => {
+  const handleMovieCardMouseEnter = () => {
+    onMovieCardMouseEnter(filmId);
   };
 
   return (
-    <article className="small-movie-card catalog__movies-card" onMouseEnter={handleFilmCardMouseEnter}>
+    <article className="small-movie-card catalog__movies-card" onMouseEnter={handleMovieCardMouseEnter}>
       <div className="small-movie-card__image">
         <img src={ posterImage } alt={ name } width="280" height="175"/>
       </div>
@@ -18,8 +18,8 @@ const FilmCard = ({onFilmCardMouseEnter, filmId, posterImage, name}) => {
   );
 };
 
-FilmCard.propTypes = {
-  onFilmCardMouseEnter: PropTypes.func,
+MovieCard.propTypes = {
+  onMovieCardMouseEnter: PropTypes.func,
   filmId: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -28,4 +28,4 @@ FilmCard.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default FilmCard;
+export default MovieCard;
